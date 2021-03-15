@@ -1,7 +1,5 @@
 name: Reminder to tell you what favorite foot to chose for lunch
-on:
-  schedule:
-  - cron: '0 11 * * *'
+on: push
 jobs:
   lunchReminder:
     name: Lunch reminder
@@ -13,6 +11,6 @@ jobs:
         env:
           SLACK_CHANNEL: general
           SLACK_COLOR: blue
-          SLACK_MESSAGE: '🍚 Hi, folks! Here is the menu I prepared for you today. '${{}}
+          SLACK_MESSAGE: '🍚 Hi, folks! Here is the menu I prepared for you today.'
           SLACK_TITLE: Today Menu
           SLACK_WEBHOOK: ${{ secrets.SLACK_LUNCH_REMINDER }}
